@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 
     pointer = &vet[0];
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 1; i < 5; i++)
     {
         if (vet[i] > vet[i-1]) {
             *pointer = vet[i];
