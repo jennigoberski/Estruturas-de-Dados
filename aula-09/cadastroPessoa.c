@@ -13,7 +13,7 @@ typedef struct
 int main(int argc, char const *argv[])
 {
     CadastroPessoa contatos[100];
-    int index = 0, opcaoUsuario = -1, encontrado = -1, consultaInt;
+    int index = 0, opcaoUsuario = -1, encontrado = -1, consultaInt, opcaoExcluir;
     char consultaChar[50];
 
     while (opcaoUsuario != 0)
@@ -31,6 +31,10 @@ int main(int argc, char const *argv[])
 
         switch (opcaoUsuario)
         {
+        case 0:
+            printf("\n Saindo...\n");
+            break;
+            
         case 1:
             printf("\n Cadastrar contato:  \n");
             printf("\n ID:%d\n", contatos[index].id = index);
@@ -168,8 +172,8 @@ int main(int argc, char const *argv[])
             printf("\n TEL:%d", contatos[consultaInt].telefone);
 
             printf("\nDeseja excluir esse contato? [1]Sim/[2]Não: ");
-            scanf("%d", &consultaInt);
-            if (consultaInt == 1)
+            scanf("%d", &opcaoExcluir);
+            if (opcaoExcluir == 1)
             {
                 for (int i = consultaInt; i < index; i++)
                 {
@@ -182,7 +186,7 @@ int main(int argc, char const *argv[])
             break;
 
         default:
-            printf("Operação inválida!");
+            printf("Operação inválida!\n");
             break;
         }
     }
